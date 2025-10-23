@@ -19,6 +19,7 @@
       --muted:#6b7280;
       --line:#e5e7eb;
       --accent:#6b7cff;
+      --arrow:#d6cdeb;
       --radius:16px;
       --shadow:0 6px 16px rgba(0,0,0,.08);
     }
@@ -29,23 +30,32 @@
       display:grid; place-items:center; padding:32px 16px;
     }
 
-    .wrap{ width:100%; max-width:640px; text-align:center }
+    .wrap{ width:100%; max-width:640px; text-align:left }
 
-    header{ margin-bottom:28px }
+    header{ margin-bottom:28px; text-align:center }
     .logo{ max-width:240px; height:auto; margin-bottom:8px }
     .brand p{ color:var(--muted); margin:6px 0 0 }
 
     .links{ display:grid; gap:12px; margin:24px 0 }
-    .link{ border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:white; transition:.2s }
-    .link a{ display:block; padding:16px 18px; text-decoration:none; color:var(--ink); font-weight:600; letter-spacing:.2px }
+    .link{ position:relative; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:white; transition:.25s }
+    .link a{ display:flex; align-items:center; justify-content:space-between; padding:16px 18px; text-decoration:none; color:var(--ink); font-weight:600; letter-spacing:.2px }
     .link:hover{ border-color:var(--accent); transform:translateY(-2px) }
+
+    .arrow-circle{
+      width:28px; height:28px; border-radius:50%; border:1px solid var(--arrow);
+      display:flex; align-items:center; justify-content:center; background:transparent; transition:.22s ease; flex-shrink:0;
+      opacity:0; transform:scale(.92);
+    }
+    .arrow-circle svg{ width:16px; height:16px; stroke:black; fill:none; stroke-width:2; display:block; }
+    .arrow-circle svg path{ stroke-linecap:round; stroke-linejoin:round }
+    .link:hover .arrow-circle{ opacity:1; transform:scale(1); background:var(--arrow); }
 
     .socials{ display:flex; justify-content:center; gap:12px; margin-top:20px }
     .socials a{ width:42px; height:42px; border-radius:10px; display:grid; place-items:center; border:1px solid var(--line); color:var(--ink); background:white; text-decoration:none; box-shadow:var(--shadow); transition:.2s }
     .socials a:hover{ border-color:var(--accent); transform:translateY(-2px) }
     .socials a svg{ width:20px; height:20px; fill:currentColor }
 
-    footer{ margin-top:24px; color:var(--muted); font-size:13px }
+    footer{ margin-top:24px; color:var(--muted); font-size:13px; text-align:center }
   </style>
 </head>
 <body>
@@ -57,19 +67,34 @@
 
     <div class="links">
       <div class="link">
-        <a href="https://skriveguiden.com" target="_blank" rel="noopener">✨ Forside – Skriveguiden</a>
+        <a href="https://skriveguiden.com" target="_blank" rel="noopener">
+          <span>✨ Forside – Skriveguiden</span>
+          <span class="arrow-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10 M12 7l5 5-5 5"/></svg></span>
+        </a>
       </div>
       <div class="link">
-        <a href="https://www.skriveguiden.com/valg-av-sjanger/" target="_blank" rel="noopener">📖 Velg riktig sjanger</a>
+        <a href="https://www.skriveguiden.com/valg-av-sjanger/" target="_blank" rel="noopener">
+          <span>📖 Velg riktig sjanger</span>
+          <span class="arrow-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10 M12 7l5 5-5 5"/></svg></span>
+        </a>
       </div>
       <div class="link">
-        <a href="https://www.skriveguiden.com/verdensbygging-grunnmuren-i-fantasy/" target="_blank" rel="noopener">🌍 Verdensbygging: Grunnmuren i fantasy</a>
+        <a href="https://www.skriveguiden.com/verdensbygging-grunnmuren-i-fantasy/" target="_blank" rel="noopener">
+          <span>🌍 Verdensbygging: Grunnmuren i fantasy</span>
+          <span class="arrow-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10 M12 7l5 5-5 5"/></svg></span>
+        </a>
       </div>
       <div class="link">
-        <a href="https://www.skriveguiden.com/skriv-gode-kjaerlighetshistorier/" target="_blank" rel="noopener">❤️ Skriv gode kjærlighetshistorier</a>
+        <a href="https://www.skriveguiden.com/skriv-gode-kjaerlighetshistorier/" target="_blank" rel="noopener">
+          <span>❤️ Skriv gode kjærlighetshistorier</span>
+          <span class="arrow-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10 M12 7l5 5-5 5"/></svg></span>
+        </a>
       </div>
       <div class="link">
-        <a href="https://www.skriveguiden.com/skriveressurser/" target="_blank" rel="noopener">🧰 Skriveressurser</a>
+        <a href="https://www.skriveguiden.com/skriveressurser/" target="_blank" rel="noopener">
+          <span>🧰 Skriveressurser</span>
+          <span class="arrow-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10 M12 7l5 5-5 5"/></svg></span>
+        </a>
       </div>
     </div>
 
